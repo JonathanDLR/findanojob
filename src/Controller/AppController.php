@@ -9,7 +9,7 @@ use Symfony\Component\HttpFoundation\Response;
 class AppController extends Controller
 {
     /**
-     * @Route("/", name="ent_form")
+     * @Route("/ent_form", name="ent_form")
      */
     public function indexEnt(): Response
     {
@@ -17,10 +17,18 @@ class AppController extends Controller
     }
 
     /**
-     * @Route("/", name="stag_form")
+     * @Route("/stag_form", name="stag_form")
      */
     public function indexStag(): Response
     {
         return $this->render('stag_form.html.twig');
+    }
+
+    /**
+     * @Route("/", name="index")
+     */
+    public function index()
+    {
+        return $this->render('index.html.twig');
     }
 }

@@ -19,10 +19,15 @@ class SecurityController extends Controller
     public function register(UserHandler $formHandler, Request $request, UserPasswordEncoderInterface $encoder): Response
     {
         $form = $this->createForm(RegisterType::class);
+        
 
         if($formHandler->handle($form, $request, $encoder)) {
-            
-            return $this->redirectToRoute('list');
+            if($formHandler->userstatut == 1) {
+                return $this->redirectToRoute('ent_form');
+            }
+            elseif($formHandler->userstatut == 2) {
+                return $this->redirectToRoute('stag_form');
+            }
         }
 
         return $this->render('security/register.html.twig', ['form' => $form->createView()]);
@@ -34,8 +39,8 @@ class SecurityController extends Controller
     public function login(AuthenticationUtils $authenticationUtils): Response
     {
         return $this->render('security/login.html.twig', [
-            'error' => $authentificationUtils->getLastAuthentificationError(),
-            'last_username' => $authentificationUtils->getLastUsername()
+            'error' => $authenticationUtils->getLastAuthenticationError(),
+            'last_username' => $authenticationUtils->getLastUsername()
         ]);
     }
 

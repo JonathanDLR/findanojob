@@ -25,6 +25,11 @@ class UserHandler
      */
     private $loggerInterface;
 
+    /**
+     * @var Integer
+     */
+    public $userstatut;
+
     public function __construct(ObjectManager $objectManager, LoggerInterface $loggerInterface)
     {
         $this->objectManager = $objectManager;
@@ -41,7 +46,7 @@ class UserHandler
              */
             $userModel = $form->getData();
 
-            print_r($userModel->userstatut);
+            $this->userstatut = $userModel->userstatut;
 
             /**
              * @var User $user
