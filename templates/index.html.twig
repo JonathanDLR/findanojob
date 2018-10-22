@@ -2,17 +2,17 @@
 
 {% block body %}
     {% if not app.user %}
-       <div class="container">
+       <div class="container-fluid">
         <div class="row">
-            <div class="col text-center">
-                <div class="col-xs-12">
-                    <h1>Espace de connexion</h1>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="inscription"><h2><U style="color: #E80F00;">Connexion</U></h2></div>
                 </div>
 
                 <form action="{{ path('app_login') }}" method="post">
 
                     <fieldset>
-                        <div clas="form-group">
+                        <div class="form-group">
                             <label for="username">Username</label>
                             <input type="text" name="_username" placeholder="Username">
                         </div>
@@ -21,13 +21,16 @@
                             <input type="password" name="_password" placeholder="Password">
                         </div>
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/>
-                        <button role="button" type="submit" class="btn btn-primary btn-lg"><i class="fa fa-sign-in" aria-hidden="true"></i>Connexion</button>
+                        <button role="button" type="submit" class="btn btn-success"><i class="fa fa-sign-in" aria-hidden="true"></i>Connexion</button>
                     </fieldset>
                 </form>
-                <button class="btn btn-primary btn-lg">Inscription</button>
+                <button class="btn btn-success" id="BUTinscription"><a href="{{ path('app_register') }}">Inscription</a></button>
             </div>
         </div> 
     {% else %}    
         Bienvenue {{ app.user.username }}
     {% endif %}
 {% endblock %}
+        {% block javascripts %}
+            <script src="{{ asset('build/js/jquery.js') }}"></script>
+        {% endblock %}
