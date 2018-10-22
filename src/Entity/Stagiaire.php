@@ -21,68 +21,68 @@ class Stagiaire
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $nom;
+    public $nom;
 
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $prenom;
+    public $prenom;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $adresse;
+    public $adresse;
 
     /**
      * @ORM\Column(type="string", length=60)
      */
-    private $ville;
+    public $ville;
 
     /**
      * @ORM\Column(type="string", length=60)
      */
-    private $departement;
+    public $departement;
 
     /**
      * @ORM\Column(type="string", length=60)
      */
-    private $region;
+    public $region;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="date", nullable=true)
      */
-    private $date_debut;
+    public $date_debut;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="date", nullable=true)
      */
-    private $date_fin;
+    public $date_fin;
 
     /**
      * @ORM\Column(type="integer", nullable=true)
      */
-    private $age;
+    public $age;
 
     /**
      * @ORM\Column(type="string", length=6, nullable=true)
      */
-    private $sexe;
+    public $sexe;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $presentation;
+    public $presentation;
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\User", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
-    private $user;
+    public $user;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\StagiaireCompetence", mappedBy="stagiaire")
      */
-    private $stagiaireCompetences;
+    public $stagiaireCompetences;
 
     public function __construct()
     {

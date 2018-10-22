@@ -19,9 +19,20 @@ class UserRepository extends ServiceEntityRepository
         parent::__construct($registry, User::class);
     }
 
-//    /**
-//     * @return User[] Returns an array of User objects
-//     */
+   /**
+    * @return User[] Returns an array of User objects
+    */
+
+    public function findLastId()
+    {
+        $qb = $this->createQueryBuilder('e')
+            ->select('MAX(e.id)')
+            ->orderBy('e.id', 'DESC')
+            ->setMaxResults(1);
+            
+            return $qb->getQuery()->getOneOrNullResult();
+            
+    }
     /*
     public function findByExampleField($value)
     {

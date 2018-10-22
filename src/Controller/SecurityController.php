@@ -26,7 +26,7 @@ class SecurityController extends Controller
                 return $this->redirectToRoute('ent_form');
             }
             elseif($formHandler->userstatut == 2) {
-                return $this->redirectToRoute('stag_form');
+                return $this->redirectToRoute('stagiaire');
             }
         }
 
