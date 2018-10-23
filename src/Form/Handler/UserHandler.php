@@ -12,6 +12,8 @@ use Symfony\Component\Form\FormError;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
+
 
 class UserHandler
 {
@@ -69,6 +71,8 @@ class UserHandler
             }
 
             $this->objectManager->flush();
+
+            
 
             return true;
         }

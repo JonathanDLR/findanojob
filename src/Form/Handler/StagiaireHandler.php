@@ -56,7 +56,7 @@ class StagiaireHandler
 
 
             $user = $this->security->getUser();
-            var_dump($user);
+            
             $stagiaire = new Stagiaire();
 
             
@@ -71,7 +71,7 @@ class StagiaireHandler
             $stagiaire->setAge($stagiaireModel->age);
             $stagiaire->setSexe($stagiaireModel->sexe);
             $stagiaire->setPresentation($stagiaireModel->presentation);
-            $stagiaire->setUser($lastId[1]);
+            $stagiaire->setUser($user);
             
             try {
                 $this->objectManager->persist($stagiaire);
