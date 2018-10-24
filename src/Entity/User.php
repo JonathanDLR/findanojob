@@ -55,6 +55,11 @@ class User implements UserInterface
      */
     private $commentaires;
 
+    /**
+     * @ORM\Column(type="boolean", nullable=true)
+     */
+    private $finish;
+
     public function __construct()
     {
         $this->message_send = new ArrayCollection();
@@ -242,6 +247,18 @@ class User implements UserInterface
                 $commentaire->setUser(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getFinish(): ?bool
+    {
+        return $this->finish;
+    }
+
+    public function setFinish(?bool $finish): self
+    {
+        $this->finish = $finish;
 
         return $this;
     }

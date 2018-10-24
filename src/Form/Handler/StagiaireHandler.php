@@ -84,6 +84,10 @@ class StagiaireHandler
 
             $this->objectManager->flush();
 
+            $user->setFinish(true);
+            $this->objectManager->persist($user);
+            $this->objectManager->flush();
+
             return true;
         }
 

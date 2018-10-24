@@ -24,13 +24,7 @@ class RegisterType extends AbstractType
                 'first_options' => array('label' => 'Password'),
                 'second_options' => array('label' => 'Répeter password'),
             ))
-            ->add('userstatut', ChoiceType::class,
-                array( 'choices' => array(
-                    'entreprise' => '1',
-                    'stagiaire' => '2'
-                ),
-                'multiple'=>false, 'expanded'=>true)
-            )          
+                   
             ->add('submit', SubmitType::class, [
                 'label' => 'Inscrivez vous',
                 'attr' => ['class' => 'btn btn-primary btn-lg']]

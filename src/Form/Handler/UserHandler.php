@@ -27,10 +27,6 @@ class UserHandler
      */
     private $loggerInterface;
 
-    /**
-     * @var Integer
-     */
-    public $userstatut;
 
     public function __construct(ObjectManager $objectManager, LoggerInterface $loggerInterface)
     {

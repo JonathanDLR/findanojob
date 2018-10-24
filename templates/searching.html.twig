@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+ <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="col-xs-12">
+                    <h1>faire une recherche</h1>
+                </div>
+                {% form_theme formSearching 'bootstrap_4_layout.html.twig' %}
+                {{ form_start(formSearching) }}
+                {{ form_widget(formSearching) }}
+                <select name="region" id="SELregion">
+                    {% for region in regions %}
+                        <option value={{ region }}>{{ region }}</option>
+                    {% endfor %}
+                </select>
+                {{ form_end(formSearching) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

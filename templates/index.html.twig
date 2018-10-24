@@ -29,6 +29,14 @@
         </div> 
     {% else %}    
         Bienvenue {{ app.user.username }}
+        {% if app.user.finish %}
+            <button class="btn btn-success" id="BUTinscription"><a href="{{ path('app_register') }}">Modifier</a></button>
+        {% else %}
+            <p>Vous êtes un stagiaire?</p>
+            <button class="btn btn-success" id="BUTinscription"><a href="{{ path('stag_form') }}">Stagiaire</a></button>
+            <p>Vous êtes une entreprise?</p>
+            <button class="btn btn-success" id="BUTinscription"><a href="{{ path('ent_form') }}">Entreprise</a></button>
+        {% endif %}
     {% endif %}
 {% endblock %}
         {% block javascripts %}

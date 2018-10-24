@@ -19,6 +19,25 @@ class StagiaireRepository extends ServiceEntityRepository
         parent::__construct($registry, Stagiaire::class);
     }
 
+    public function findRegion()
+    {
+        $req = $this->createQueryBuilder('e')
+            ->select('e.region')
+            ->getQuery();
+        
+        $test = $req->execute();
+
+        $response = [];
+
+        foreach($test as $key) {
+            foreach($key as $value) {
+                array_push($response, $value);
+            }            
+        }
+
+        return $response;
+    }
+
 //    /**
 //     * @return Stagiaire[] Returns an array of Stagiaire objects
 //     */
