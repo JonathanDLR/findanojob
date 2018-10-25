@@ -38,6 +38,28 @@ class StagiaireRepository extends ServiceEntityRepository
         return $response;
     }
 
+    public function findStagiaire($region)
+    {
+        $req = $this->createQueryBuilder('e')
+            ->select('e.nom')
+            ->where('e.region = ?1')
+            // ->andWhere('e.date_debut < ?2')
+            ->setParameter(1, $region)
+            // ->setParameter(2, $dateDebut)
+            ->getQuery()
+            ->getResult();
+
+        $response = [];
+
+        foreach($req as $key) {
+            foreach($key as $value) {
+                array_push($response, $value);
+            }            
+        }
+
+        return $response;
+    }
+
 //    /**
 //     * @return Stagiaire[] Returns an array of Stagiaire objects
 //     */

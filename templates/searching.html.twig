@@ -8,13 +8,18 @@
                     <h1>faire une recherche</h1>
                 </div>
                 {% form_theme formSearching 'bootstrap_4_layout.html.twig' %}
+
                 {{ form_start(formSearching) }}
-                {{ form_widget(formSearching) }}
+                
+                {{ form_row(formSearching.dateDebut) }}
+                <label for="region">Sélectionner une région</label>
                 <select name="region" id="SELregion">
                     {% for region in regions %}
                         <option value={{ region }}>{{ region }}</option>
                     {% endfor %}
                 </select>
+                <button role="button" type="submit" class="btn btn-primary btn-lg"><i class="fa fa-sign-in" aria-hidden="true"></i>Rechercher</button>
+
                 {{ form_end(formSearching) }}
             </div>
         </div>

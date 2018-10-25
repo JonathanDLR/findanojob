@@ -6,12 +6,11 @@
         <div class="row">
             <div class="col text-center">
                 <div class="col-xs-12">
-                    <h1>Enregistrez vous</h1>
+                    {% for result in results %}
+                    <p>{{ result }}</p>
+                    {% endfor %}
                 </div>
-                {# {% form_theme formStag 'bootstrap_4_layout.html.twig' %} #}
-                {{ form(formStag) }}
             </div>
         </div>
     </div>
-
 {% endblock %}

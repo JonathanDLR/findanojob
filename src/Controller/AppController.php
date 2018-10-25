@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -30,5 +31,13 @@ class AppController extends Controller
     public function index()
     {
         return $this->render('index.html.twig');
+    }
+
+    /**
+     * @Route("/result", name="result")
+     * @Template("resultsearch.html.twig")
+     */
+    public function result()
+    {        
     }
 }

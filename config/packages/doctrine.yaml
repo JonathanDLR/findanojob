@@ -14,7 +14,7 @@ doctrine:
         host: localhost
         port: 3306
         user: root
-        password: sqlcoda#2018!
+        password: marie89
         charset: utf8mb4
         default_table_options:
             charset: utf8mb4

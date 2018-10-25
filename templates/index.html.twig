@@ -30,12 +30,13 @@
     {% else %}    
         Bienvenue {{ app.user.username }}
         {% if app.user.finish %}
-            <button class="btn btn-success" id="BUTinscription"><a href="{{ path('app_register') }}">Modifier</a></button>
+            <button class="btn btn-success" id="BUTmodification"><a href="{{ path('app_register') }}">Modifier</a></button>
+            <button class="btn btn-success" id="BUTsearch"><a href="{{ path('search') }}">Faire une recherche</a></button>
         {% else %}
             <p>Vous êtes un stagiaire?</p>
-            <button class="btn btn-success" id="BUTinscription"><a href="{{ path('stag_form') }}">Stagiaire</a></button>
+            <button class="btn btn-success" id="BUTinscStag"><a href="{{ path('stagiaire') }}">Stagiaire</a></button>
             <p>Vous êtes une entreprise?</p>
-            <button class="btn btn-success" id="BUTinscription"><a href="{{ path('ent_form') }}">Entreprise</a></button>
+            <button class="btn btn-success" id="BUTinscEnt"><a href="{{ path('ent_form') }}">Entreprise</a></button>
         {% endif %}
     {% endif %}
 {% endblock %}
