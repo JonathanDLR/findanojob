@@ -41,7 +41,7 @@ class StagiaireRepository extends ServiceEntityRepository
     public function findStagiaire($region)
     {
         $req = $this->createQueryBuilder('e')
-            ->select('e.nom')
+            // ->select('e.nom', 'e.id')
             ->where('e.region = ?1')
             // ->andWhere('e.date_debut < ?2')
             ->setParameter(1, $region)
@@ -49,15 +49,7 @@ class StagiaireRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
 
-        $response = [];
-
-        foreach($req as $key) {
-            foreach($key as $value) {
-                array_push($response, $value);
-            }            
-        }
-
-        return $response;
+        return $req;
     }
 
 //    /**

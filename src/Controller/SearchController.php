@@ -23,7 +23,6 @@ class SearchController extends AbstractController
             $regionSearch = $request->request->get('region');
             $dateDebut = $request->request->get('dateDebut');
             $searchStagiaire = $this->getDoctrine()->getRepository('App:Stagiaire')->findStagiaire($regionSearch);
-            var_dump($searchStagiaire);
             return $this->render('resultsearch.html.twig', [
                 'results' => $searchStagiaire
             ]);

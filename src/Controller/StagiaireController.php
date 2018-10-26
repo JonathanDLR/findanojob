@@ -31,4 +31,16 @@ class StagiaireController extends AbstractController
             'formStag' => $formStag->createView(),
         ]);
     }
+
+    /**
+     * @Route("/infostagiaire/{id}", name="infostagiaire")
+     */
+    public function infostagiaire($id): Response
+    {
+        $stagiaire = $this->getDoctrine()->getRepository('App:Stagiaire')->find($id);
+
+        return $this->render('stag_infos.html.twig', [
+            'stagiaire' => $stagiaire,
+        ]);
+    }
 }
