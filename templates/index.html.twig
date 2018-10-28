@@ -30,7 +30,7 @@
     {% else %}    
         Bienvenue {{ app.user.username }}
         {% if app.user.finish %}
-            <button class="btn btn-success" id="BUTmodification"><a href="{{ path('app_register') }}">Modifier</a></button>
+            <button class="btn btn-success" id="BUTmodification"><a href="{{ path('account', {'id': app.user.id }) }}">Modifier</a></button>
             <button class="btn btn-success" id="BUTsearch"><a href="{{ path('search') }}">Faire une recherche</a></button>
         {% else %}
             <p>Vous êtes un stagiaire?</p>

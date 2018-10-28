@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <div class="col-xs-12">
+                    <h1>Modifiez vos données</h1>
+                </div>
+                {# {% form_theme formStag 'bootstrap_4_layout.html.twig' %} #}
+                {{ form_start(formStagMaj) }}
+                
+                {{ form_row(formStagMaj.nom, {'attr': {'value': stagiaire.nom }}) }}
+                {{ form_row(formStagMaj.prenom, {'attr': {'value': stagiaire.prenom }}) }}
+                {{ form_row(formStagMaj.adresse, {'attr': {'value': stagiaire.adresse }}) }}
+                {{ form_row(formStagMaj.ville, {'attr': {'value': stagiaire.ville }}) }}
+                {{ form_row(formStagMaj.departement, {'attr': {'value': stagiaire.departement }}) }}
+                {{ form_row(formStagMaj.region, {'attr': {'value': stagiaire.region }}) }}
+                {{ form_row(formStagMaj.date_debut) }}
+                {{ form_row(formStagMaj.date_fin) }}
+                {{ form_row(formStagMaj.age, {'attr': {'value': stagiaire.age }}) }}
+                {{ form_row(formStagMaj.sexe, {'attr': {'value': stagiaire.sexe }}) }}
+                {{ form_row(formStagMaj.presentation, {'attr': {'value': stagiaire.presentation }}) }}
+                
+                {{ form_end(formStagMaj) }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
