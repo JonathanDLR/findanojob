@@ -13,8 +13,8 @@ doctrine:
         dbname: findanojob
         host: localhost
         port: 3306
-        user: root
-        password: marie89
+        user: 
+        password: 
         charset: utf8mb4
         default_table_options:
             charset: utf8mb4

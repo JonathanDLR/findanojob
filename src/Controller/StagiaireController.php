@@ -38,6 +38,7 @@ class StagiaireController extends AbstractController
     public function infostagiaire($id): Response
     {
         $stagiaire = $this->getDoctrine()->getRepository('App:Stagiaire')->find($id);
+        
 
         return $this->render('stag_infos.html.twig', [
             'stagiaire' => $stagiaire,

@@ -9,7 +9,7 @@ use App\Form\Handler\MajStagiaireHandler;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class MajStagiaireController extends AbstractController
+class MajController extends AbstractController
 {
     /**
      * @Route("/account/{id}", name="account")
@@ -17,7 +17,10 @@ class MajStagiaireController extends AbstractController
     public function majstagiaire($id, MajStagiaireHandler $formHandler, Request $request): Response
     {
         $formStagMaj = $this->createForm(StagiaireType::class);
-        $stagiaire = $this->getDoctrine()->getRepository('App:Stagiaire')->find($id);
+        $stagiaire = $this->getDoctrine()->getRepository('App:Stagiaire')->findOneBy([
+            'user' => $id
+            ]);
+        
 
         if($formHandler->handle($formStagMaj, $request)) {
             return $this->redirectToRoute('index');

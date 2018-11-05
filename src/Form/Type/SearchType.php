@@ -12,11 +12,7 @@ class SearchType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder
-            ->add('dateDebut', DateType::class, [
-                'widget' => 'single_text',
-                'format' => 'dd-MM-yyyy'
-            ]);      
+              
     }
 
     public function configureOptions(OptionsResolver $resolver)

@@ -21,48 +21,48 @@ class Entreprise
     /**
      * @ORM\Column(type="string", length=40)
      */
-    private $nom;
+    public $nom;
 
     /**
      * @ORM\Column(type="integer")
      */
-    private $siret;
+    public $siret;
 
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $adresse;
+    public $adresse;
 
     /**
      * @ORM\Column(type="string", length=60)
      */
-    private $ville;
+    public $ville;
 
     /**
      * @ORM\Column(type="string", length=60)
      */
-    private $departement;
+    public $departement;
 
     /**
      * @ORM\Column(type="string", length=60)
      */
-    private $region;
+    public $region;
 
     /**
      * @ORM\Column(type="text", nullable=true)
      */
-    private $presentation;
+    public $presentation;
 
     /**
      * @ORM\OneToOne(targetEntity="App\Entity\User", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
-    private $user;
+    public $user;
 
     /**
      * @ORM\OneToMany(targetEntity="App\Entity\Offre", mappedBy="entreprise")
      */
-    private $offres;
+    public $offres;
 
     public function __construct()
     {

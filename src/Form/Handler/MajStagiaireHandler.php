@@ -47,7 +47,9 @@ class MajStagiaireHandler
             $stagiaireModel = $form->getData();
             $user = $this->security->getUser();
             $id = $user->getId();
-            $stagiaire = $this->em->getRepository('App:Stagiaire')->find($id);
+            $stagiaire = $this->em->getRepository('App:Stagiaire')->findOneBy([
+                'user' => $id
+                ]);
 
             $stagiaire->setNom($stagiaireModel->nom);
             $stagiaire->setPrenom($stagiaireModel->prenom);
